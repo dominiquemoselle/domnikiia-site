@@ -73,6 +73,26 @@ const SELECTED_WORK_STATS_OVERRIDE = {
   "ai-02": { spend: "$673K", hold: "31%" },
 };
 
+// Shared observer: sets a video's src (triggering load + autoplay) only once its
+// card scrolls near the viewport, instead of every card fetching on page load.
+const lazyVideoObserver = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const v = entry.target;
+          v.src = v.dataset.src;
+          lazyVideoObserver.unobserve(v);
+        }
+      });
+    }, { rootMargin: '400px 0px' })
+  : null;
+
+function lazyLoadVideo(v, src) {
+  if (!lazyVideoObserver) { v.src = src; return; }
+  v.dataset.src = src;
+  lazyVideoObserver.observe(v);
+}
+
 function workCard(id, statsOverride) {
   const w = WORK[id];
   if (!w) return null;
@@ -108,15 +128,25 @@ function workCard(id, statsOverride) {
     card.querySelector('.work-meta').after(row);
   }
   const v = card.querySelector('video');
+  let retried = false;
   v.addEventListener('error', () => {
+    // Transient network/CDN hiccups (common right after a fresh deploy) shouldn't
+    // permanently mark a working video as missing — retry once before giving up.
+    if (!retried) {
+      retried = true;
+      setTimeout(() => { v.src = src; v.load(); }, 1500);
+      return;
+    }
     card.classList.add('empty');
     v.remove();
     const soon = document.createElement('div');
     soon.className = 'soon';
     soon.textContent = 'Video coming soon';
     card.querySelector('.work-media').prepend(soon);
-  }, { once: true });
-  v.src = src;
+  });
+  // Lazy-load: only fetch/play the video once its card is near the viewport, so a
+  // page with dozens of cards doesn't try to autoplay them all at once on load.
+  lazyLoadVideo(v, src);
   card.addEventListener('click', () => { if (!card.classList.contains('empty')) openModal(src); });
   return card;
 }
