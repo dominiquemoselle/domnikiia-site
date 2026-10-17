@@ -34,3 +34,31 @@ Download these from your Gamma site (right-click → Save image) and put them in
 
 ## 4. Next: /portfolio
 Once this is live, the portfolio goes in `portfolio/index.html`, which makes `domnikiia.com/portfolio` work automatically.
+
+## 5. Adding portfolio videos
+The video list lives in `site.js` (the `WORK` list). Each card plays `assets/work/<name>.mp4`.
+Until a file is uploaded, its card shows "Video coming soon".
+
+Upload on GitHub: open `assets/work` → **Add file → Upload files** → rename each file to the exact name below → **Commit changes**.
+GitHub's website only accepts files **under 25 MB**, so compress bigger ones first
+(HandBrake → preset "Social 720p30", or any free online MP4 compressor; aim for 5–15 MB).
+
+| File name | Drive file |
+|---|---|
+| `dermazen-david-goliath.mp4` *(homepage)* | Dermazen / DEC2025_DEP27 _David & Goliath_F_ck Big Pharma_V01 |
+| `dermazen-most-people.mp4` | Dermazen / Jan2026_DEP45_Mostpeoplegetthiswrong_V1 |
+| `dermazen-men-with-beard.mp4` | Dermazen / Jan2026_DEP46_ Menwithbeard_V2 |
+| `dermazen-makeup-flakes.mp4` | Dermazen / Mar2026_DEP79_MakeupFlakes_V2 |
+| `bedthreads-sheets-harmful.mp4` *(homepage)* | Bed Threads / V5_FEB2026_BTP92_Sheets are harmful |
+| `bedthreads-if-welcome.mp4` | Bed Threads / V2_JAN2026_BTP79_If... you're welcome |
+| `bedthreads-pick-sheets.mp4` | Bed Threads / JAN2026_BTP81_Howtopicksheetssafeforskin_Iteration_V1 |
+| `bedthreads-david-goliath.mp4` | Bed Threads / V3_JAN2026_BTP77_David&Goliath |
+| `bedthreads-objection.mp4` | Bed Threads / price objection handling |
+| `ijw-you-will-not-smell.mp4` | IJW / JAN2026_IJW39_YOU WILL NOT SMELL_V9 |
+| `ijw-smell-better-naked.mp4` | IJW / smell better naked |
+| `ijw-ugc-whisper.mp4` | IJW / ugcwishperingad |
+| `ijw-interview.mp4` | IJW / interview-fishodorsyndrom |
+| `hears-before-after.mp4` | Hears / BEFOREvsAFTER |
+| `hears-david-goliath.mp4` | Hears / david&goliath sorytelling |
+| `hears-stitch.mp4` | Hears / Stitch ad |
+| `hears-if-statement.mp4` | Hears / if-statement |
