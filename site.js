@@ -97,13 +97,17 @@ function workCard(id, statsOverride) {
   const w = WORK[id];
   if (!w) return null;
   const stats = statsOverride || w.stats;
-  const src = `/assets/work/${id}.mp4`;
+  // Inline cards autoplay muted, so they only need a small, silent preview —
+  // full quality (with audio) loads on demand when the modal opens.
+  const previewSrc = `/assets/work/previews/${id}.mp4`;
+  const fullSrc = `/assets/work/${id}.mp4`;
+  const poster = `/assets/work/posters/${id}.jpg`;
   const card = document.createElement('button');
   card.className = 'work';
   card.type = 'button';
   card.innerHTML = `
     <div class="work-media">
-      <video muted loop playsinline autoplay preload="metadata"></video>
+      <video muted loop playsinline autoplay preload="metadata" poster="${poster}"></video>
       <span class="play">▶ Play with sound</span>
     </div>
     <div class="work-meta">
@@ -134,7 +138,7 @@ function workCard(id, statsOverride) {
     // permanently mark a working video as missing — retry once before giving up.
     if (!retried) {
       retried = true;
-      setTimeout(() => { v.src = src; v.load(); }, 1500);
+      setTimeout(() => { v.src = previewSrc; v.load(); }, 1500);
       return;
     }
     card.classList.add('empty');
@@ -146,8 +150,8 @@ function workCard(id, statsOverride) {
   });
   // Lazy-load: only fetch/play the video once its card is near the viewport, so a
   // page with dozens of cards doesn't try to autoplay them all at once on load.
-  lazyLoadVideo(v, src);
-  card.addEventListener('click', () => { if (!card.classList.contains('empty')) openModal(src); });
+  lazyLoadVideo(v, previewSrc);
+  card.addEventListener('click', () => { if (!card.classList.contains('empty')) openModal(fullSrc); });
   return card;
 }
 
