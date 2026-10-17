@@ -1,13 +1,12 @@
 // Portfolio data. No brand names here: this file is public.
 // Formats are listed in display order. Within a format, lower `rank` = better performance.
 const FORMATS = [
+  { id: "ai",            title: "AI-generated ads",            desc: "Concepts produced with AI video and voice tools — street-style investigations, AI creators and cartoon explainers — blended here by performance, best results first." },
   { id: "storytelling",  title: "Storytelling",                desc: "David vs Goliath narratives and brand stories that turn a category enemy into the reason to buy." },
   { id: "talking-head",  title: "Talking-head “yapper” ads",   desc: "A creator speaking straight to camera: myth-busting, education and pattern-interrupt hooks." },
   { id: "problem",       title: "Problem → solution & demo",   desc: "Agitate a specific pain, then show the product solving it on camera." },
   { id: "ugc",           title: "UGC & native formats",        desc: "Ads that look like organic content: stitches, whispers and creator-style edits." },
-  { id: "investigation", title: "Interviews & investigation",  desc: "Street-style interviews and amateur-investigation formats that build curiosity and trust." },
   { id: "proof",         title: "Proof & objection handling",  desc: "Before/after transformations and answers to the objections that stop people buying." },
-  { id: "ai",            title: "AI-generated ads",            desc: "Concepts produced with AI video and voice tools to test angles fast and cheaply." },
 ];
 
 // tier: "9-figure brand" | "8-figure brand" | "7-figure brand" (optional)
@@ -15,63 +14,69 @@ const FORMATS = [
 // stats: Motion-style numbers shown under the video (any subset):
 //   { roas: "2.4x", spend: "$120K", hook: "38%", hold: "12%" }
 const WORK = {
-  "storytelling-01": { format: "storytelling",  rank: 1, title: "David & Goliath Story",          category: "Skincare",       stats: { roas: "1.46x", spend: "$160K", hook: "30%" } },
+  "storytelling-01": { format: "storytelling",  rank: 1, title: "David & Goliath Story",          category: "Skincare",       stats: { roas: "1.18x", spend: "$337K" } },
   "storytelling-02": { format: "storytelling",  rank: 2, title: "Dealerships Lie To You",          category: "Car diagnostics", tier: "8-figure brand" },
-  "storytelling-03": { format: "storytelling",  rank: 3, title: "Brand Inspiration Reel",          category: "Bedding",        tier: "7-figure brand", stats: { roas: "6.4x", spend: "$63K" } },
-  "storytelling-04": { format: "storytelling",  rank: 4, title: "Sheets Are Harmful",              category: "Bedding",        tier: "7-figure brand" },
-  "storytelling-05": { format: "storytelling",  rank: 5, title: "Sheets Are Harmful — Iteration",  category: "Bedding",        tier: "7-figure brand" },
-  "storytelling-06": { format: "storytelling",  rank: 6, title: "Brand Story",                     category: "Haircare",       tier: "8-figure brand" },
+  "storytelling-04": { format: "storytelling",  rank: 4, title: "Sheets Are Harmful",              category: "Bedding",        tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "storytelling-07": { format: "storytelling",  rank: 7, title: "AI Crash Simulation",              category: "Smart helmets",  stats: { roas: "1.89x", spend: "$18K" } },
+  "storytelling-08": { format: "storytelling",  rank: 8, title: "AI Rider POV",                     category: "Smart helmets",  stats: { roas: "1.89x", spend: "$13K" } },
 
-  "talking-head-01": { format: "talking-head",  rank: 1, title: "Yapper — Myth-Busting",           category: "Bedding",        tier: "7-figure brand" },
-  "talking-head-02": { format: "talking-head",  rank: 2, title: "Dad Advice",                      category: "Car diagnostics", tier: "8-figure brand" },
+  "talking-head-01": { format: "talking-head",  rank: 1, title: "Yapper — Myth-Busting",           category: "Bedding",        tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "talking-head-02": { format: "talking-head",  rank: 2, title: "Dad Advice",                      category: "Car diagnostics", tier: "8-figure brand", stats: { spend: "$86K", hold: "15%" } },
   "talking-head-03": { format: "talking-head",  rank: 3, title: "Expert Authority",                category: "Skincare" },
   "talking-head-04": { format: "talking-head",  rank: 4, title: "Yapper — Pattern Interrupt",      category: "Personal care" },
   "talking-head-05": { format: "talking-head",  rank: 5, title: "Expert Authority",                category: "Personal care" },
   "talking-head-06": { format: "talking-head",  rank: 6, title: "If… You're Welcome",              category: "Personal care" },
 
-  "problem-01": { format: "problem", rank: 1, title: "You Will Not Smell",   category: "Personal care", stats: { spend: "$83K", hook: "55%" } },
-  "problem-02": { format: "problem", rank: 2, title: "Color Combinations",   category: "Bedding",  tier: "7-figure brand" },
-  "problem-03": { format: "problem", rank: 3, title: "How To Style Sheets", category: "Bedding",  tier: "7-figure brand" },
-  "problem-04": { format: "problem", rank: 4, title: "Cotton 101",          category: "Bedding",  tier: "7-figure brand" },
-  "problem-05": { format: "problem", rank: 5, title: "Fabric Education",    category: "Bedding",  tier: "7-figure brand" },
-  "problem-06": { format: "problem", rank: 6, title: "Cost Per Sleep",      category: "Bedding",  tier: "7-figure brand" },
-  "problem-07": { format: "problem", rank: 7, title: "Scalp Problem Reveal", category: "Skincare" },
-  "problem-08": { format: "problem", rank: 8, title: "Crash Moment",        category: "Smart helmets" },
+  "problem-01": { format: "problem", rank: 1, title: "You Will Not Smell",   category: "Personal care", stats: { spend: "$35K", roas: "1.13x" } },
+  "problem-02": { format: "problem", rank: 2, title: "Color Combinations",   category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "problem-04": { format: "problem", rank: 4, title: "Cotton 101",          category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "problem-05": { format: "problem", rank: 5, title: "Fabric Education",    category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "problem-06": { format: "problem", rank: 6, title: "Cost Per Sleep",      category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "problem-07": { format: "problem", rank: 7, title: "Scalp Problem Reveal", category: "Skincare", stats: { roas: "1.26x", spend: "$66K" } },
+  "problem-08": { format: "problem", rank: 8, title: "Crash Moment",        category: "Smart helmets", stats: { roas: "0.75x", spend: "$15K" } },
 
-  "ugc-01": { format: "ugc", rank: 1, title: "TV Show Stitch",   category: "Personal care" },
-  "ugc-02": { format: "ugc", rank: 2, title: "ASMR Unboxing",    category: "Pet food", tier: "9-figure brand" },
-  "ugc-03": { format: "ugc", rank: 3, title: "ASMR Feeding",     category: "Pet food", tier: "9-figure brand" },
-  "ugc-04": { format: "ugc", rank: 4, title: "Rider POV",        category: "Smart helmets" },
-
-  "investigation-01": { format: "investigation", rank: 1, title: "Amateur Investigation",               category: "Car diagnostics", tier: "8-figure brand", stats: { spend: "$500K+", hook: "71%" } },
-  "investigation-02": { format: "investigation", rank: 2, title: "Amateur Investigation — Iteration",    category: "Car diagnostics", tier: "8-figure brand" },
-  "investigation-03": { format: "investigation", rank: 3, title: "Amateur Investigation — Iteration 2",  category: "Car diagnostics", tier: "8-figure brand" },
-  "investigation-04": { format: "investigation", rank: 4, title: "Amateur Investigation — AU",           category: "Car diagnostics", tier: "8-figure brand" },
-  "investigation-05": { format: "investigation", rank: 5, title: "Is It A Scam?",                        category: "Car diagnostics", tier: "8-figure brand" },
+  "ugc-01": { format: "ugc", rank: 1, title: "TV Show Stitch",   category: "Personal care", stats: { spend: "$85K", roas: "1.03x" } },
+  "ugc-02": { format: "ugc", rank: 2, title: "ASMR Unboxing",    category: "Pet food", tier: "9-figure brand", stats: { roas: "0.38x", spend: "$25K" } },
+  "ugc-03": { format: "ugc", rank: 3, title: "ASMR Feeding",     category: "Pet food", tier: "9-figure brand", stats: { roas: "0.21x", spend: "$112K" } },
+  "ugc-05": { format: "ugc", rank: 5, title: "Brand Inspiration Reel", category: "Bedding", tier: "7-figure brand", stats: { roas: "6.4x", spend: "$63K" } },
+  "ugc-06": { format: "ugc", rank: 6, title: "How To Style Sheets",    category: "Bedding", tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "ugc-07": { format: "ugc", rank: 7, title: "How To Style — Iteration", category: "Bedding", tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "ugc-08": { format: "ugc", rank: 0, title: "Objection Handling", category: "Haircare", tier: "8-figure brand" },
 
   "proof-01": { format: "proof", rank: 1, title: "Before vs After",  category: "Haircare", tier: "8-figure brand", stats: { spend: "$103K", hook: "44%" } },
-  "proof-02": { format: "proof", rank: 2, title: "Comment Reply",    category: "Haircare", tier: "8-figure brand" },
-  "proof-03": { format: "proof", rank: 3, title: "We're Not Cheap",  category: "Bedding",  tier: "7-figure brand" },
-  "proof-04": { format: "proof", rank: 4, title: "Price Objection",  category: "Bedding",  tier: "7-figure brand" },
-  "proof-05": { format: "proof", rank: 5, title: "Comment Reply",    category: "Bedding",  tier: "7-figure brand" },
+  "proof-02": { format: "proof", rank: 2, title: "Comment Reply",    category: "Haircare", tier: "8-figure brand", stats: { roas: "1.46x", spend: "$36K" } },
+  "proof-03": { format: "proof", rank: 3, title: "We're Not Cheap",  category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "proof-04": { format: "proof", rank: 4, title: "Price Objection",  category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
+  "proof-05": { format: "proof", rank: 5, title: "Comment Reply",    category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
 
-  "ai-01": { format: "ai", rank: 1, title: "Cartoon AI Concept",        category: "Haircare",   tier: "8-figure brand" },
-  "ai-02": { format: "ai", rank: 2, title: "AI Crash Simulation",       category: "Smart helmets" },
-  "ai-03": { format: "ai", rank: 3, title: "AI Stitch — Stage Talk",    category: "Personal care" },
-  "ai-04": { format: "ai", rank: 4, title: "Cartoon Mechanism Explainer", category: "Supplements" },
+  "ai-02": { format: "ai", rank: 1, title: "Amateur Investigation",              category: "Car diagnostics", tier: "8-figure brand", stats: { spend: "$302K", hold: "17%" } },
+  "ai-05": { format: "ai", rank: 2, title: "Amateur Investigation — Iteration",   category: "Car diagnostics", tier: "8-figure brand", stats: { spend: "$218K", hold: "30%" } },
+  "ai-06": { format: "ai", rank: 3, title: "Amateur Investigation — Iteration 2", category: "Car diagnostics", tier: "8-figure brand", stats: { spend: "$92K",  hold: "31%" } },
+  "ai-07": { format: "ai", rank: 4, title: "Amateur Investigation — AU",          category: "Car diagnostics", tier: "8-figure brand", stats: { spend: "$60K",  hold: "30%" } },
+  "ai-01": { format: "ai", rank: 5, title: "Cartoon AI Concept",        category: "Haircare",   tier: "8-figure brand", stats: { roas: "1.37x", spend: "$43K" } },
+  "ai-03": { format: "ai", rank: 6, title: "AI Stitch — Stage Talk",    category: "Personal care", stats: { roas: "1.05x", spend: "$38K" } },
+  "ai-08": { format: "ai", rank: 7, title: "Is It A Scam?",            category: "Car diagnostics", tier: "8-figure brand" },
+  "ai-04": { format: "ai", rank: 8, title: "Cartoon Mechanism Explainer", category: "Supplements" },
 };
 
 // Top 10 by spend for the homepage "Selected work" row. Spend shown only where verified
 // from ad-account data; ids without a confirmed figure still appear (diversity of brand/format)
 // but without a spend badge — see note in repo root.
 const SELECTED_WORK = [
-  "investigation-01", "talking-head-01", "ugc-02", "proof-01", "storytelling-01",
-  "ai-02", "talking-head-03", "investigation-05", "storytelling-03", "problem-01",
+  "ai-02", "talking-head-01", "ugc-02", "proof-01", "storytelling-01",
+  "ai-01", "talking-head-02", "problem-07", "ugc-05", "problem-01",
 ];
 
-function workCard(id) {
+// Homepage-only stat overrides: the Selected Work row shows the TOTAL spend across all
+// iterations of a concept (not the single iteration's own number shown on the portfolio page).
+const SELECTED_WORK_STATS_OVERRIDE = {
+  "ai-02": { spend: "$673K", hold: "31%" },
+};
+
+function workCard(id, statsOverride) {
   const w = WORK[id];
   if (!w) return null;
+  const stats = statsOverride || w.stats;
   const src = `/assets/work/${id}.mp4`;
   const card = document.createElement('button');
   card.className = 'work';
@@ -89,15 +94,15 @@ function workCard(id) {
   card.querySelector('.work-meta p').textContent = [w.category, w.tier].filter(Boolean).join(' · ');
   const tag = card.querySelector('.tag');
   if (w.result) tag.textContent = w.result; else tag.remove();
-  if (w.stats) {
+  if (stats) {
     const labels = { roas: 'ROAS', spend: 'Spend', hook: 'Hook rate', hold: 'Hold rate' };
     const row = document.createElement('dl');
     row.className = 'metrics';
-    Object.keys(labels).filter(k => w.stats[k]).forEach(k => {
+    Object.keys(labels).filter(k => stats[k]).forEach(k => {
       const d = document.createElement('div');
       d.innerHTML = '<dt></dt><dd></dd>';
       d.querySelector('dt').textContent = labels[k];
-      d.querySelector('dd').textContent = w.stats[k];
+      d.querySelector('dd').textContent = stats[k];
       row.appendChild(d);
     });
     card.querySelector('.work-meta').after(row);
@@ -128,17 +133,15 @@ function renderSelectedWork(track) {
   SELECTED_WORK.forEach((id, i) => {
     const w = WORK[id];
     if (!w) return;
-    const card = workCard(id);
+    const override = SELECTED_WORK_STATS_OVERRIDE[id];
+    const card = workCard(id, override);
     if (!card) return;
     card.classList.add('ranked');
-    const n = document.createElement('span');
-    n.className = 'rank-n';
-    n.textContent = String(i + 1).padStart(2, '0');
-    card.prepend(n);
-    if (w.stats && w.stats.spend) {
+    const stats = override || w.stats;
+    if (stats && stats.spend) {
       const badge = document.createElement('span');
       badge.className = 'spend-badge';
-      badge.textContent = w.stats.spend + ' spend';
+      badge.textContent = stats.spend;
       card.querySelector('.work-media').appendChild(badge);
     }
     track.appendChild(card);
@@ -154,12 +157,18 @@ function renderFormats(root) {
     const sec = document.createElement('div');
     sec.className = 'brand reveal';
     sec.id = f.id;
-    sec.innerHTML = `<div class="brand-head"><div><h3></h3><p class="muted format-desc"></p></div></div><div class="work-grid"></div>`;
+    sec.innerHTML = `<div class="brand-head"><div><h3></h3><p class="muted format-desc"></p></div></div>
+      <div class="carousel-wrap">
+        <button class="carousel-arrow prev" aria-label="Previous">‹</button>
+        <div class="carousel"><div class="carousel-track format-row"></div></div>
+        <button class="carousel-arrow next" aria-label="Next">›</button>
+      </div>`;
     sec.querySelector('h3').textContent = f.title;
     sec.querySelector('.format-desc').textContent = f.desc;
-    const grid = sec.querySelector('.work-grid');
+    const grid = sec.querySelector('.format-row');
     ids.forEach(id => grid.appendChild(workCard(id)));
     root.appendChild(sec);
+    initCarousel(sec.querySelector('.carousel-wrap'));
   });
 }
 
