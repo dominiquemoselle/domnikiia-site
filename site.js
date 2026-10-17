@@ -11,7 +11,9 @@ const FORMATS = [
 ];
 
 // tier: "9-figure brand" | "8-figure brand" | "7-figure brand" (optional)
-// result: short headline number shown on the card, e.g. "$120k spend · 2.4 ROAS" (optional)
+// result: optional short highlight shown above the title, e.g. "Top spender"
+// stats: Motion-style numbers shown under the video (any subset):
+//   { roas: "2.4x", spend: "$120K", hook: "38%", hold: "12%" }
 const WORK = {
   "storytelling-01":  { format: "storytelling",  rank: 1, title: "The Big-Pharma Underdog",        category: "Skincare" },
   "storytelling-02":  { format: "storytelling",  rank: 2, title: "Small Brand vs The Giants",      category: "Bedding",          tier: "7-figure brand" },
@@ -52,6 +54,19 @@ function workCard(id) {
   card.querySelector('.work-meta p').textContent = [w.category, w.tier].filter(Boolean).join(' · ');
   const tag = card.querySelector('.tag');
   if (w.result) tag.textContent = w.result; else tag.remove();
+  if (w.stats) {
+    const labels = { roas: 'ROAS', spend: 'Spend', hook: 'Hook rate', hold: 'Hold rate' };
+    const row = document.createElement('dl');
+    row.className = 'metrics';
+    Object.keys(labels).filter(k => w.stats[k]).forEach(k => {
+      const d = document.createElement('div');
+      d.innerHTML = '<dt></dt><dd></dd>';
+      d.querySelector('dt').textContent = labels[k];
+      d.querySelector('dd').textContent = w.stats[k];
+      row.appendChild(d);
+    });
+    card.querySelector('.work-meta').after(row);
+  }
   const v = card.querySelector('video');
   v.addEventListener('error', () => {
     card.classList.add('empty');

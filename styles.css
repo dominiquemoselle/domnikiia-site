@@ -179,3 +179,7 @@ footer h2 a:hover { text-decoration: underline; }
 .brand-head h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .nav-links a[aria-current="page"] { color: var(--fg); }
 .format-desc { max-width: 620px; margin-top: 8px; }
+.metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin: 14px 0 0; background: var(--border); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.metrics > div { background: var(--card); padding: 10px 12px; }
+.metrics dt { font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted-fg); }
+.metrics dd { margin: 2px 0 0; font-family: var(--display); font-weight: 800; font-size: 1.15rem; color: var(--primary); }
