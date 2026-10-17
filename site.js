@@ -43,7 +43,7 @@ const WORK = {
   "ugc-07": { format: "ugc", rank: 7, title: "How To Style — Iteration", category: "Bedding", tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
   "ugc-08": { format: "ugc", rank: 0, title: "Objection Handling", category: "Haircare", tier: "8-figure brand" },
 
-  "proof-01": { format: "proof", rank: 1, title: "Before vs After",  category: "Haircare", tier: "8-figure brand", stats: { spend: "$103K", hook: "44%" } },
+  "proof-01": { format: "proof", rank: 1, title: "Before vs After",  category: "Haircare", tier: "8-figure brand", stats: { spend: "$260K", roas: "1.27x" } },
   "proof-02": { format: "proof", rank: 2, title: "Comment Reply",    category: "Haircare", tier: "8-figure brand", stats: { roas: "1.46x", spend: "$36K" } },
   "proof-03": { format: "proof", rank: 3, title: "We're Not Cheap",  category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
   "proof-04": { format: "proof", rank: 4, title: "Price Objection",  category: "Bedding",  tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
