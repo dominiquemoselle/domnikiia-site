@@ -19,6 +19,8 @@ const WORK = {
   "storytelling-04": { format: "storytelling",  rank: 4, title: "Sheets Are Harmful",              category: "Bedding",        tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
   "storytelling-07": { format: "storytelling",  rank: 7, title: "AI Crash Simulation",              category: "Smart helmets",  stats: { roas: "1.89x", spend: "$18K" } },
   "storytelling-08": { format: "storytelling",  rank: 8, title: "AI Rider POV",                     category: "Smart helmets",  stats: { roas: "1.89x", spend: "$13K" } },
+  "storytelling-09": { format: "storytelling",  rank: 9, title: "Founder Story",                     category: "Hearing health", stats: { roas: "1.47x", spend: "$148K" } },
+  "storytelling-10": { format: "storytelling",  rank: 10, title: "David & Goliath — Festival Moment", category: "Hearing health", stats: { roas: "1.9x", spend: "$71K" } },
 
   "talking-head-01": { format: "talking-head",  rank: 1, title: "Yapper — Myth-Busting",           category: "Bedding",        tier: "7-figure brand", stats: { roas: "6x+", spend: "$30K+" } },
   "talking-head-02": { format: "talking-head",  rank: 2, title: "Dad Advice",                      category: "Car diagnostics", tier: "8-figure brand", stats: { spend: "$86K", hold: "15%" } },
@@ -63,8 +65,9 @@ const WORK = {
 // from ad-account data; ids without a confirmed figure still appear (diversity of brand/format)
 // but without a spend badge — see note in repo root.
 const SELECTED_WORK = [
-  "ai-02", "storytelling-01", "proof-01", "talking-head-01", "ugc-03",
+  "ai-02", "storytelling-01", "proof-01", "storytelling-09", "ugc-03",
   "ai-01", "talking-head-02", "problem-07", "ugc-05", "problem-01",
+  "talking-head-01", "storytelling-10",
 ];
 
 // Homepage-only stat overrides: the Selected Work row shows the TOTAL spend across all
