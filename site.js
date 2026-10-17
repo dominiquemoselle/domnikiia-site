@@ -63,7 +63,7 @@ const WORK = {
 // from ad-account data; ids without a confirmed figure still appear (diversity of brand/format)
 // but without a spend badge — see note in repo root.
 const SELECTED_WORK = [
-  "ai-02", "talking-head-01", "ugc-02", "proof-01", "storytelling-01",
+  "ai-02", "storytelling-01", "proof-01", "talking-head-01", "ugc-03",
   "ai-01", "talking-head-02", "problem-07", "ugc-05", "problem-01",
 ];
 
