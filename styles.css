@@ -42,6 +42,7 @@ nav { display: flex; align-items: center; justify-content: space-between; gap: 1
 /* Hero */
 .hero { padding-top: 64px; padding-bottom: 96px; }
 .hero h1 { max-width: 15ch; font-size: clamp(2.9rem, 8.4vw, 6.4rem); line-height: .95; letter-spacing: -.01em; }
+.hero-stat { font-family: var(--display); font-weight: 600; font-size: clamp(1.1rem, 2.2vw, 1.5rem); color: var(--fg); margin-top: 20px; }
 .hero-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: end; margin-top: 48px; }
 .hero-intro { max-width: 640px; font-size: 1.1rem; display: grid; gap: 14px; }
 .hero-intro b { color: var(--fg); font-weight: 500; }
