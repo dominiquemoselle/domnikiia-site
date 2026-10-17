@@ -32,8 +32,10 @@ Download these from your Gamma site (right-click → Save image) and put them in
 
 **If you use email on @domnikiia.com:** don't delete `MX` or `TXT` records. With option A, copy them into Netlify DNS first.
 
-## 4. Next: /portfolio
-Once this is live, the portfolio goes in `portfolio/index.html`, which makes `domnikiia.com/portfolio` work automatically.
+## 4. Pages
+- `index.html` → domnikiia.com
+- `portfolio/index.html` → domnikiia.com/portfolio
+- Shared look: `styles.css`. Shared video list and player: `site.js`.
 
 ## 5. Adding portfolio videos
 The video list lives in `site.js` (the `WORK` list). Each card plays `assets/work/<name>.mp4`.
