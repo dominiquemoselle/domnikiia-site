@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domnikiia Karahutsa</title>
+  <meta name="description" content="Domnikiia (Nika) Karahutsa – Creative Strategist & Growth Marketer scaling DTC eCommerce brands through data-backed creative and performance marketing.">
+  <meta property="og:title" content="Domnikiia Karahutsa – Growth Marketing | Creative Strategist">
+  <meta property="og:description" content="6+ years scaling DTC eCommerce brands to 7+ figures through data-backed creative and performance marketing.">
+  <meta property="og:image" content="/assets/portrait.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --page: #F7F2DA;
+      --card: #FFFDE6;
+      --card-alt: #FFFFFF;
+      --ink: #2B2A26;
+      --muted: #5E5B52;
+      --green: #224435;
+      --green-soft: #E4EDE3;
+      --mint: #AEE4BD;
+      --butter: #FCEC99;
+      --line: #E8E1C2;
+      --radius: 24px;
+      --shadow: 0 1px 2px rgba(34, 68, 53, .06), 0 8px 30px rgba(34, 68, 53, .06);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font: 400 17px/1.65 var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--green); text-underline-offset: 3px; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { font-family: var(--serif); color: var(--green); line-height: 1.15; margin: 0 0 .5em; font-weight: 600; }
+    h1 { font-size: clamp(2.1rem, 4.5vw, 3.2rem); letter-spacing: -.01em; }
+    h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+    h3 { font-size: 1.35rem; }
+    h4 { font: 600 1.08rem/1.35 var(--sans); margin: 0 0 .35em; color: var(--ink); }
+    p { margin: 0 0 .9em; }
+
+    /* Cards (Gamma "sections") */
+    main { padding: 32px 16px 64px; display: grid; gap: 32px; }
+    .card {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 5vw, 64px);
+    }
+    .card.alt { background: var(--card-alt); }
+    .card > h1, .card > h2 { margin-bottom: 1.1em; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 3fr); gap: clamp(24px, 4vw, 56px); align-items: center; padding: 0; overflow: hidden; }
+    .hero-img {
+      align-self: stretch; min-height: 420px;
+      background: var(--green-soft) center / cover no-repeat;
+      position: relative;
+    }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: 72% 44%; position: absolute; inset: 0; }
+    .hero-body { padding: clamp(28px, 5vw, 64px) clamp(28px, 5vw, 64px) clamp(28px, 5vw, 64px) 0; }
+    .hero-body .role { font: 600 1.15rem/1.4 var(--sans); color: var(--muted); margin: -.3em 0 1em; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.6em; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 999px;
+      font: 600 .98rem/1 var(--sans); color: var(--green); text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(34, 68, 53, .15); }
+    .btn.mint { background: var(--mint); }
+    .btn.butter { background: var(--butter); }
+
+    /* Stats */
+    .stats { display: grid; gap: 28px 32px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+    .stat .num { font: 700 clamp(2.2rem, 4vw, 2.9rem)/1 var(--serif); color: var(--green); margin-bottom: .35em; }
+    .stat p { color: var(--muted); font-size: .97rem; }
+    .stat p em { color: var(--ink); }
+    .stats.compact .stat { border-top: 2px solid var(--green); padding-top: 18px; }
+
+    /* Numbered competencies */
+    .bullets { display: grid; gap: 28px 40px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); counter-reset: n; }
+    .bullets > div { display: grid; grid-template-columns: 44px 1fr; gap: 16px; }
+    .bullets > div::before {
+      counter-increment: n; content: counter(n);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--green); color: var(--card);
+      display: grid; place-items: center; font: 700 1.05rem var(--sans);
+    }
+    .bullets p { color: var(--muted); font-size: .97rem; }
+
+    /* Icon list */
+    .icons { display: grid; gap: 24px 40px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .icons > div { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; }
+    .icons svg { width: 32px; height: 32px; fill: var(--green); }
+    .icons p { color: var(--muted); font-size: .97rem; }
+
+    /* Experience */
+    .job { padding: 26px 0; border-top: 1px solid var(--line); }
+    .job:first-of-type { border-top: 0; padding-top: 0; }
+    .job h4 { font: 600 1.35rem/1.3 var(--serif); color: var(--green); }
+    .job .meta { color: var(--muted); margin-bottom: .8em; }
+    .job ul { margin: 0; padding-left: 1.2em; }
+    .job li { margin-bottom: .45em; }
+    .job li::marker { color: var(--green); }
+
+    /* Case studies */
+    .case { padding: 40px 0; border-top: 1px solid var(--line); }
+    .case:first-of-type { border-top: 0; padding-top: 0; }
+    .case h3 { text-align: center; font-style: italic; font-weight: 700; margin-bottom: 1.2em; }
+    .case.split { display: grid; grid-template-columns: 1fr 1fr; gap: 32px 48px; align-items: start; }
+    .case.split h3 { grid-column: 1 / -1; }
+    .case.split .stats { grid-template-columns: 1fr; }
+    .shots { display: grid; gap: 18px; }
+    .shot {
+      border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+      background: var(--green-soft); min-height: 160px; position: relative;
+    }
+    .shot img { width: 100%; height: auto; }
+
+    /* Missing image placeholder */
+    .ph::after {
+      content: attr(data-ph); position: absolute; inset: 0; display: grid; place-items: center;
+      padding: 16px; text-align: center; font: 500 .85rem/1.4 var(--sans); color: var(--green); opacity: .7;
+    }
+    .ph.loaded::after { display: none; }
+
+    /* Boxes */
+    .boxes { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+    .boxes > div { background: var(--green-soft); border-radius: 16px; padding: 22px; }
+    .boxes p { color: var(--muted); font-size: .95rem; margin: 0; }
+    .quotes { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); margin-bottom: 1.6em; }
+    .quotes > div { background: var(--card-alt); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+    .quotes h3 { margin-bottom: .2em; }
+    .quotes .who { font-weight: 600; margin-bottom: 1em; }
+    .quotes q { font-style: italic; color: var(--muted); display: block; margin-bottom: .9em; quotes: none; }
+    .center { text-align: center; }
+
+    .connect { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 0 16px 40px; }
+
+    @media (max-width: 760px) {
+      body { font-size: 16px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-img { min-height: 360px; }
+      .hero-body { padding: 0 24px 32px; }
+      .case.split, .connect { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<main>
+
+  <!-- HERO -->
+  <section class="card hero reveal" id="about">
+    <div class="hero-img ph" data-ph="Add assets/portrait.jpg">
+      <img src="assets/portrait.jpg" alt="Domnikiia Karahutsa" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()">
+    </div>
+    <div class="hero-body">
+      <h1>Domnikiia Karahutsa</h1>
+      <p class="role">Growth Marketing | Creative Strategist</p>
+      <p>📍London, United Kingdom</p>
+      <p>👋 Hi, I'm Domnikiia (aka Nika) – a <b>Creative Strategist</b> with 6+ years of experience <b>scaling DTC eCommerce brands</b> through data-backed creative and performance marketing.</p>
+      <p>☕ I build creative systems, test angles, and scale brands to <b>7+ figures.</b></p>
+      <p>For the past year, I've specialized in creative strategy – staying ahead of Meta's evolving ad landscape by building <b>scalable creative infrastructure</b>, diversified formats, and psychology-driven copy that <b>converts</b>.</p>
+      <p>I'm open to Creative Strategist roles, paid social consulting, and paid media optimization projects.</p>
+      <p><b>Explore my work</b> to see if I'm the right fit for your team!</p>
+      <div class="buttons">
+        <a class="btn mint" href="https://calendly.com/" target="_blank" rel="noopener">Talk to Nika</a>
+        <a class="btn butter" href="https://www.linkedin.com/in/domnikiia-karahutsa/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY ACHIEVEMENTS -->
+  <section class="card reveal" id="achievements">
+    <h1>Key Achievements</h1>
+    <div class="stats">
+      <div class="stat"><div class="num">10.9x</div><h4>The Growth Journal</h4><p>Generated $1,5M in revenue (a 994% increase) while achieving a 10.9x ROAS (up 13.5%) within 8 months.</p></div>
+      <div class="stat"><div class="num">5.89x</div><h4>Canadian Retail Brand</h4><p>Successfully achieved 5.8x ROAS and scaled by 6% for the past year with overall revenue growth of CAD $1,7M.</p></div>
+      <div class="stat"><div class="num">3.0x</div><h4>Sustainable Fashion</h4><p>Achieved a 3.0x ROAS while maintaining strict adherence to no-discount policies and sustainable production practices.</p></div>
+      <div class="stat"><div class="num">2x</div><h4>Jiu Jitsu Clothing Brand</h4><p>Successfully scaled a female-owned Jiu-Jitsu brand to achieve an outstanding 12x ROAS.</p></div>
+      <div class="stat"><div class="num">2x</div><h4>Wellness E-commerce Brand</h4><p>Scaled revenue ~195% by implementing internal creative production and disciplined testing loop, producing 20+ scalable winners (each €50k+ spend) at ROAS ~1.7–1.9</p></div>
+    </div>
+  </section>
+
+  <!-- CORE COMPETENCIES -->
+  <section class="card reveal" id="competencies">
+    <h1>Core Competencies</h1>
+    <div class="bullets">
+      <div><div><h4>Creative Strategy</h4><p>Directing and managing the creation of high-performing advertising assets for Meta, Google, TikTok, and Pinterest using data-driven insights using Atria, Foreplay, Motion.</p></div></div>
+      <div><div><h4>Full-Funnel Optimisation</h4><p>Proficiently managing and scaling 6-figure advertising budgets on paid social, while also improving customer journey, email marketing and offer.</p></div></div>
+      <div><div><h4>Performance Marketing</h4><p>Leveraging GA4, Triple Whale, and Motion for data-led campaign optimization to improve CAC, new customers percentage, and enhancing LTV.</p></div></div>
+      <div><div><h4>Team Leadership</h4><p>Managing a creative team of 10+ executives and CRO specialists, overseeing onboarding and support for new paid social executives to drive successful marketing campaigns</p></div></div>
+      <div><div><h4>Process Building &amp; AI</h4><p>Extensive experience with various A/B testing strategies, optimising workflows, knowledge research &amp; building SOPs, DPA ads and prompt systems for ChatGPT.</p></div></div>
+      <div><div><h4>Landing Page Optimization</h4><p>Using tools like Unbounce, PageSpeed as well as heatmaps to optimize landing pages, working on design improvements to increase conversion rates and user engagement.</p></div></div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL EXPERTISE -->
+  <section class="card alt reveal" id="tools">
+    <h1>Technical Expertise</h1>
+    <div class="icons">
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 1 7.5l11 5.5 11-5.5L12 2Zm-8.1 9.6L1 13l11 5.5L23 13l-2.9-1.4L12 15.6l-8.1-4Zm0 5L1 18l11 5.5L23 18l-2.9-1.4L12 20.6l-8.1-4Z"/></svg><div><h4>Platforms</h4><p>Meta Ads, TikTok Ads, Google Ads, Snapchat Ads, Pinterest Ads, Reddit Ads.</p></div></div>
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 2.05V13h10.95A10 10 0 1 1 11 2.05Zm2 0A10 10 0 0 1 21.95 11H13V2.05Z"/></svg><div><h4>Analytics</h4><p>GA4, Triple Whale, Unbounce, PageSpeed.</p></div></div>
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h3v3H5V3Zm11 0h3v3h-3V3ZM8 6h8v3h3v3h3v6h-3v-3h-2v3h-3v3h-2v-3H8v3H6v-3H3v3H0v-6h3V9h3V6h2Zm1 5v3h2v-3H9Zm4 0v3h2v-3h-2Z"/></svg><div><h4>Creative</h4><p>BilloApp, Motion, Atria, Foreplay, Smartly, Meta Sound Collection, ElevenLabs, ChatGPT, MidJourney.</p></div></div>
+      <div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 1 8v3h22V8L12 1ZM7 13a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm10 0a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5ZM3 23v-1.5C3 20 5 19 7 19s4 1 4 2.5V23H3Zm10 0v-1.5c0-1.5 2-2.5 4-2.5s4 1 4 2.5V23h-8Z"/></svg><div><h4>Management</h4><p>Slack, Asana, Zapier, Figma, Monday.</p></div></div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="card reveal" id="experience">
+    <h1>Work Experience</h1>
+    <div class="job">
+      <h4>Hears</h4><p class="meta"><b>Creative Strategist</b> (2025)</p>
+      <ul>
+        <li>Scaled revenue ~195% by implementing internal creative production (a.k.a. creative engine) and disciplined testing loop, producing 20+ scalable winners (each €50k+ spend) at ROAS ~1.7–1.9</li>
+        <li>Partnered with founders and performance teams, working cross-functionally and providing rapid support in a fast-paced startup</li>
+        <li>Built the creative ops spine: brief templates, production workflows, vendor onboarding, SLAs/QA, and performance KPIs, reducing cycle time and improving on-time delivery</li>
+        <li>Directed concurrent workstreams: creative briefing, landing pages briefing, UGC sourcing, onboarding, copywriting, editing, team management, and high-level strategy against weekly goals, with KPI reporting for accountability</li>
+        <li>Documented learnings in a reusable hook/angle library. Wrote psychology-driven scripts that lifted hook rates and increased CVR across winning creatives</li>
+        <li>Launched bundle/offer/landing-page tests to protect AOV and ROAS at scale</li>
+        <li>Improved funnel performance by mapping personas × awareness stages and pairing creatives to intent-specific landing pages, lifting CVR and lowering CPA/CAC.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h4>Commerce Garage</h4><p class="meta"><b>Director of Strategy</b> (2024 - 2025)</p>
+      <ul>
+        <li>Owned media buying strategy for DTC brands, managing $300K+ monthly budgets across Meta and TikTok and Display while collaborating on SEO &amp; Affiliate strategies to drive efficient CAC &amp; LTV growth.</li>
+        <li>Presented performance reports in client-facing calls, providing actionable insights to improve ROAS and client retention.</li>
+        <li>Integrated AI tools like Atria, Foreplay, and ChatGPT for advanced creative testing, repetitive processes and data analysis.</li>
+        <li>Developed full-funnel paid social strategies and email marketing, achieving 3x ROAS for brands like Sympli, Nunona, Calimacil, Junior Kids, Whole Life Pet, Web Hosting Canada.</li>
+        <li>Partnered with creators, run interviews with founders for high-performing creatives, and briefed CRO experts, optimizing performance across acquisition and retention funnels.</li>
+        <li>Led cross-functional teams, established workflows and SOPs, and enhanced operational efficiency.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h4>Orange Trail</h4><p class="meta"><b>Marketing Lead</b> (2023 - 2024)</p>
+      <ul>
+        <li>Achieved 10x growth through strategic Meta advertising, driving $1.5 million in revenue within just 8 months for a startup brand.</li>
+        <li>Managed $100K+ monthly ad spend across Meta, TikTok, Snapchat, and Pinterest for DTC brands like Pulse of Potential, Mulat, Luciee, Super Speciosa, scaling campaigns in global markets.</li>
+        <li>Executed advanced creative testing frameworks, optimizing content for long-term performance and brand alignment.</li>
+        <li>Leveraged attribution tools (GA4, Triple Whale, Northbeam) to assess campaign effectiveness and inform data-driven decisions.</li>
+        <li>Optimized workflows and marketing initiatives using HubSpot, Zapier, Shopify, Klaviyo, Trello, ClickFunnels, Billo, Google Analytics, and MailChimp.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h4>Wolf Media Digital</h4><p class="meta"><b>Full-Stack Media Buyer</b> (2021 - 2023)</p>
+      <ul>
+        <li>Managed and scaled advertising campaigns with high budgets (100k+) on Meta, Google, and Tiktok to drive engagement and ROI.</li>
+        <li>Developed data-driven creative strategies and briefs for the creative teams to optimize campaign performance.</li>
+        <li>Achieved 3+ ROAS across managed accounts and 90% retention rate of my clients</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h4>Freelance</h4><p class="meta">Digital Marketing Specialist (2019 - 2021)</p>
+      <ul>
+        <li>Top-rated freelancer with a 100% success rate and 180+ 5-star reviews on Upwork and Fiverr.</li>
+        <li>Scaled $100K+ ad campaigns across Meta, Google, TikTok, Snapchat, and Pinterest.</li>
+        <li>Implemented effective upper-funnel strategies, increasing engagement by 40% and accelerating customer acquisition.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h4>Google (Vendor)</h4><p class="meta">Community Manager (2016 - 2021)</p>
+      <ul>
+        <li>Managed a 20,000+ member community on the Street View Discussion Forum.</li>
+        <li>Supported content creation for Google Maps, ensuring seamless operations.</li>
+        <li>Built knowledge base for the Street View trusted community to boost brand awareness and customer journey mapping.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- E-COMMERCE COLLAB STATS -->
+  <section class="card alt reveal">
+    <h1>Key Achievements: E-commerce Brand Collaboration</h1>
+    <div class="stats compact">
+      <div class="stat"><div class="num">2x</div><h4>Scale Growth</h4></div>
+      <div class="stat"><div class="num">+194%</div><h4>Revenue Increase</h4></div>
+      <div class="stat"><div class="num">1.89</div><h4>BROAS Achieved</h4></div>
+      <div class="stat"><div class="num">$4.18M</div><h4>Total Revenue</h4></div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="card reveal" id="case-studies">
+    <h1>Case Studies</h1>
+
+    <div class="case split">
+      <h3>E-commerce brand</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">2x</div><h4>Growth</h4><p><em>Achieved through strategic creative ops.</em></p><p>Built the creative ops spine: brief templates, production workflows, vendor onboarding, SLAs/QA, and performance KPIs, reducing cycle time and improving on-time delivery</p></div>
+        <div class="stat"><div class="num">$4.1M</div><h4>Revenue</h4><p><em>Driven within 8 months through creative strategy</em></p><p>Scaled revenue ~195% by implementing internal creative production (a.k.a. creative engine) and disciplined testing loop.</p></div>
+        <div class="stat"><div class="num">$50K+</div><h4>Hit Ads</h4><p><em>Delivered</em> 20+ scalable winners</p><p>Wrote psychology-driven scripts that lifted hook rates and increased CVR across winning creatives delivering 20+ scalable winners. Documented learnings in a reusable hook/angle library.</p></div>
+      </div>
+      <div class="shots">
+        <div class="shot ph" data-ph="Add assets/ecom-results-1.png"><img src="assets/ecom-results-1.png" alt="E-commerce brand ad account results" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"></div>
+        <div class="shot ph" data-ph="Add assets/ecom-results-2.png"><img src="assets/ecom-results-2.png" alt="E-commerce brand ad account results" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"></div>
+      </div>
+    </div>
+
+    <div class="case split">
+      <h3>Growth Journal</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">10x</div><h4>Growth</h4><p><em>Achieved through strategic Meta advertising for a startup brand</em></p><p>Increased brand visibility and market penetration through targeted Meta advertising campaigns, resulting in a 10x growth in customer base and brand recognition within a year.</p></div>
+        <div class="stat"><div class="num">$1.5M</div><h4>Revenue</h4><p><em>Driven within 8 months through strategic advertising</em></p><p>Generated $1.5M in revenue within just 8 months by implementing data-driven advertising strategies across multiple platforms, focusing on high-converting campaigns and customer acquisition tactics.</p></div>
+        <div class="stat"><div class="num">$100K+</div><h4>Monthly Ad Spend</h4><p><em>Managed on Meta</em></p><p>Successfully managed a monthly ad spend of $100K+ across diverse platforms including Meta, TikTok, Snapchat, and Pinterest, optimizing budget allocation and campaign performance to maximize ROI and achieve marketing objectives.</p></div>
+      </div>
+      <div class="shots">
+        <div class="shot ph" data-ph="Add assets/growth-journal-results.png"><img src="assets/growth-journal-results.png" alt="Growth Journal ad account results" onload="this.parentNode.classList.add('loaded')" onerror="this.remove()"></div>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Canadian Retail Brand</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">5.89x</div><h4>ROAS</h4><p><em>Achieved through full-funnel strategy</em></p><p>Enhanced return on ad spend by 5.89x through comprehensive full-funnel marketing strategies.</p></div>
+        <div class="stat"><div class="num">+272%</div><h4>New Customer Purchases</h4><p><em>Increase via landing page optimization</em></p><p>Improved new customer purchases by 272% through meticulous optimizations through Triple Whale, audience exclusions and specific targeting.</p></div>
+        <div class="stat"><div class="num">+25%</div><h4>Efficiency</h4><p><em>Boosted by AI powered tools</em></p><p>Integrating AI-powered tools such as Atria and Foreplay, which enhanced creative testing, audience segmentation, and data-driven decision-making.</p></div>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Sustainable Fashion</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">150%</div><h4>Customer Acquisition</h4><p><em>Increase through targeted social media ads</em></p><p>Expanded customer acquisition by 150% through strategically targeted social media advertising campaigns on platforms like Meta and TikTok, leveraging A/B testing of ad creatives, UGC creatives, collaborations with influencers and audience targeting to maximize ROI.</p></div>
+        <div class="stat"><div class="num">+60%</div><h4>Engagement</h4><p><em>Improved with UGC creative strategy</em></p><p>Boosted user engagement by 60% through an innovative UGC creative strategy, incorporating authentic customer-generated content into ad campaigns to build trust, enhance brand credibility, and drive higher conversion rates.</p></div>
+        <div class="stat"><div class="num">+127%</div><h4>Increase in revenue</h4><p><em>Achieved through Meta and TikTok</em></p><p>Efficiently managed an ad spend of $50K/month across Meta, optimizing budget allocation and campaign performance to achieve 127% growth in revenue, while closely monitoring CAC and LTV and delivering 3x ROAS.</p></div>
+      </div>
+    </div>
+
+    <div class="case">
+      <h3>Jiu Jitsu Clothing Brand</h3>
+      <div class="stats">
+        <div class="stat"><div class="num">13.2x</div><h4>Increase in spend</h4><p><em>Achieved through paid social for 7 months</em></p><p>Implemented strategic content marketing initiatives, we managed to scale budgets by 1328% while achieving incredible ROAS of 12.45x for 7 months, focusing on creative strategy to drive and engage new customers.</p></div>
+        <div class="stat"><div class="num">+40%</div><h4>Brand Awareness</h4><p><em>Lift through influencer campaigns</em></p><p>Increased brand awareness by 40% through well-crafted influencer marketing campaigns on Meta, Reddit and TikTok, collaborating with key influencers to expand brand reach, enhance brand perception, and cultivate stronger customer relationships.</p></div>
+        <div class="stat"><div class="num">+25%</div><h4>Conversion rate</h4><p><em>Improvement with offer optimization</em></p><p>Improved conversion rates by 25% through rigorous offer optimization strategies, refining promotional offers and incentives to make them more appealing to potential customers and increase the likelihood of purchase.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="card alt reveal" id="education">
+    <h1>Education &amp; Certifications</h1>
+    <div class="boxes">
+      <div><h4>Bachelor's Degree</h4><p>Mass Communications &amp; Journalism - Sofia University</p></div>
+      <div><h4>Meta Certified</h4><p>Media Buying Professional</p></div>
+      <div><h4>Google Certified</h4><p>Analytics &amp; Google Ads</p></div>
+      <div><h4>HubSpot Certified</h4><p>Content Writing</p></div>
+      <div><h4>Scaling on Paid Social Mentorship</h4><p>Daily Mentor</p></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="card reveal" id="testimonials">
+    <h2>What People Say About Working with Me</h2>
+    <div class="quotes">
+      <div>
+        <h3>Will Jago</h3><p class="who">Founder of AllOutSocial</p>
+        <q>"Domnikiia is the media buyer you NEED. In just 6 weeks, she scaled us from $5000/month in spend to over $16k/month while achieving a solid 3.5x ROAS. She’s super easy to work with and truly engaged. No sugarcoating or empty promises—she laid out a clear path for what we needed to do to succeed on Meta, and by strictly following her lead, we achieved outstanding results. I will 100% recommend her to anyone serious about scaling!"</q>
+      </div>
+      <div>
+        <h3>Victor Bianchini</h3><p class="who">Senior Art Director at Commerce Garage</p>
+        <q>"Domnikiia is one of the best and most proactive Marketing Managers I’ve ever had the pleasure of working with. Her expertise and dedication are unparalleled, and she brought a level of insight and strategic thinking that elevated every project we collaborated on."</q>
+        <q>"What truly stood out was her analytical approach to performance. She helped me see my creative work through a new lens, teaching me how to refine it for maximum impact and efficiency."</q>
+      </div>
+    </div>
+    <p class="center">More feedback you can find <a href="https://www.upwork.com/freelancers/~01b32f55d5977949f1?viewMode=1&amp;s=1017484851352698999" target="_blank" rel="noopener">here</a> or <a href="mailto:dominiquemoselle@gmail.com">ask me</a> for references.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="card alt reveal" id="contact">
+    <h1>Let's Connect!</h1>
+    <div class="connect">
+      <p>Connect with me on <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>.</p>
+      <p>Feel free to reach out directly via email: <a href="mailto:dominiquemoselle@gmail.com">dominiquemoselle@gmail.com</a></p>
+    </div>
+  </section>
+
+</main>
+<footer>© <span id="y"></span> Domnikiia Karahutsa</footer>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 }) : null;
+  document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+</script>
+</body>
+</html>
