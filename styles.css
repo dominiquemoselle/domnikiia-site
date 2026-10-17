@@ -178,3 +178,4 @@ footer h2 a:hover { text-decoration: underline; }
 .brand-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px; margin-bottom: 28px; }
 .brand-head h3 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .nav-links a[aria-current="page"] { color: var(--fg); }
+.format-desc { max-width: 620px; margin-top: 8px; }
